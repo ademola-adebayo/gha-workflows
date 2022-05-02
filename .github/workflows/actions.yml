@@ -4,9 +4,10 @@ on:
   push:
   pull_request:
     types: [assigned, closed, opened, reopened]
-  schedule:
-    - cron: "0/5 * * * *"
-
+  # schedule:
+  #   - cron: "0/5 * * * *"
+  # repository_dispatch:
+      # types: [build]
 jobs:
   run-github-actions:
     runs-on: ubuntu-latest
