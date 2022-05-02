@@ -1,0 +1,19 @@
+name: Actions Workflow
+
+on:
+  push:
+  pull_request:
+    types: [assigned, closed, opened, reopened]
+  schedule:
+    - cron: "0/5 * * * *"
+
+jobs:
+  run-github-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: List Files
+        run: |
+          pwd
+          ls -a
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
