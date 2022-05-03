@@ -13,15 +13,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: List Files
+        id: list_files
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
         run: |
           pwd
           ls -a
           echo $GITHUB_SHA
           echo $GITHUB_REPOSITORY
           echo $GITHUB_WORKSPACE
-          echo "{{ github.REPO_TOKEN }}"
-          git clone git@github:$GITHUB_REPOSITORY
-          git checkout $GITHUB_SHA
+          echo "{{ secrets.GITHUB_TOKEN }}"
+          
         
       - name: Checkout
         uses: actions/checkout@v2
