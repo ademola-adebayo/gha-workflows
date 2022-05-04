@@ -17,6 +17,10 @@ jobs:
     environment:
       name: Integrate Pull Request # Our dummy environment
     steps:
+      - uses: actions/checkout@v2
+      with:
+        ref: ${{ github.event.pull_request.head.sha }}
+        fetch-depth: 2
       - name: echo a string 
         run: echo "Hello World"
       - name: multiline script 
