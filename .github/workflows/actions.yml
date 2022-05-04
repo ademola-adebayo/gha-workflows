@@ -1,7 +1,7 @@
 name: Actions Workflow
 
 on:
-  push:
+  # push:
   pull_request:
     types: [assigned, closed, opened, reopened]
   # schedule:
